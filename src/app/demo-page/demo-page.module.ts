@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DemoPageComponent } from './demo-page.component';
 
+import { DemoPageRoutingModule } from './demo-page-routing.module';
+import { DemoPageComponent } from './demo-page.component';
 
 
 @NgModule({
   declarations: [DemoPageComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    DemoPageRoutingModule
   ]
 })
 export class DemoPageModule { }
