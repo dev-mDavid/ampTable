@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ampTable"
+    }
+  },
+  "defaultProject": "ampTable",
+  "cli": {
+    "analytics": "c7119220-9538-448f-8966-4a2121885203"
+  }
 }
