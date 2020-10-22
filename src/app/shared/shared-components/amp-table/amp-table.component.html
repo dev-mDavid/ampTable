@@ -8,7 +8,11 @@
     class="example-box" 
     *ngFor="let timePeriod of timePeriods" 
     cdkDrag>
-
+    
+    <div class="example-handle" cdkDragHandle>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">drag_indicator</mat-icon>
+    </div>
+    
     {{timePeriod}}
     
   </div>
