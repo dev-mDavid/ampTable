@@ -82,7 +82,12 @@
   top: 10px;
   right: 10px;
   color: #ccc;
-  cursor: move;
+  cursor: grab;
   width: 24px;
   height: 24px;
+
+  &:active{
+    cursor: grabbing;
+  }
 }
+
