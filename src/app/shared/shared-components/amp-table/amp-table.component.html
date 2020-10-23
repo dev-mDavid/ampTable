@@ -2,21 +2,23 @@
   cdkDropList 
   cdkDropListOrientation="horizontal" 
   class="example-list" 
-  (cdkDropListDropped)="drop($event)">
+  (cdkDropListDropped)="drop($event)"
+  >
   
   
   <div 
     class="example-box" 
-    [ngStyle]="{'background-color': dance }"
+    [ngStyle]="{'background-color': 'blue' }"
     cdkDragLockAxis="x"
     *ngFor="let timePeriod of timePeriods" 
-    cdkDrag>
-    
-    <div class="example-handle" cdkDragHandle>
-      <mat-icon aria-hidden="false" aria-label="Example home icon">drag_indicator</mat-icon>
-    </div>  
-    
-    {{timePeriod}}
+    cdkDrag
+    >
+
+    <amp-col 
+      [timePeriod]="timePeriod" 
+      cdkDragHandle
+      >
+    </amp-col>        
     
   </div>
   

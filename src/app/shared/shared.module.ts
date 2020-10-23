@@ -8,9 +8,11 @@ import { MatIconModule } from "@angular/material/icon";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 
 import { AmpTableComponent } from './shared-components/amp-table/amp-table.component';
+import { AmpColComponent } from "./shared-components/amp-col/amp-col.component";
 
 const components = [
-  AmpTableComponent
+  AmpTableComponent,
+  AmpColComponent
 ]
 
 const modules = [
