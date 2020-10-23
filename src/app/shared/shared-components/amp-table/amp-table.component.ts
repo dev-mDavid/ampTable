@@ -1,12 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
+import { HttpClient } from "@angular/common/http";
+import { HttpHeaders } from "@angular/common/http";
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'amp-table',
   templateUrl: './amp-table.component.html',
   styleUrls: ['./amp-table.component.scss']
 })
 export class AmpTableComponent  {
+
+  readonly ROOT_URL = 'https://api.clickup.com/api/v2';
+
+  posts: Observable<any>;
+
+  constructor(public http: HttpClient) { }
+
+    getPosts(){
+      let headers = new HttpHeaders().set('Authorization', 'pk_10679142_4UBRX2KG7NSBPWIK7C6MM5VN6BYSCVYC')
+      
+
+      this.posts = this.http.get(this.ROOT_URL + '/list/123/task?archived=falseoenon', { headers })
+    }
 
 styleSwitch = "green"
   
