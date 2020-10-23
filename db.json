@@ -1,4 +1,5 @@
-[
+{
+  "posts": [
   {
     "id": "9hx",
     "name": "New Task Name",
@@ -78,3 +79,4 @@
     "url": "https://app.clickup.com/t/9hz"
   }
 ]
+}
