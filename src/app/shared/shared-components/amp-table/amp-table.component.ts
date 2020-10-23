@@ -12,17 +12,19 @@ import { Observable } from 'rxjs';
 })
 export class AmpTableComponent  {
 
-  readonly ROOT_URL = 'https://api.clickup.com/api/v2';
+  readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
+  // readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
 
   posts: Observable<any>;
 
   constructor(public http: HttpClient) { }
 
     getPosts(){
-      let headers = new HttpHeaders().set('Authorization', 'pk_10679142_4UBRX2KG7NSBPWIK7C6MM5VN6BYSCVYC')
+      // let headers = new HttpHeaders().set('Authorization', 'pk_10679142_R6E47B4Z2RQA7AENVWSGS43T6J4NIF0D')
       
 
-      this.posts = this.http.get(this.ROOT_URL + '/list/123/task?archived=falseoenon', { headers })
+      this.posts = this.http.get(this.ROOT_URL + '/posts')
+      // this.posts = this.http.get(this.ROOT_URL + '/db')
     }
 
 styleSwitch = "green"
