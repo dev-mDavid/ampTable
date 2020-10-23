@@ -16,7 +16,7 @@ export class AmpTableComponent  {
   // readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
 
   posts: Observable<any>;
-
+ 
   constructor(public http: HttpClient) { }
 
     getPosts(){
