@@ -1,8 +1,11 @@
 
-<div class="example-handle">
+<div class="example-handle" 
+  [ngStyle]="{'background-color': col.color}"
+  cdkDragHandle
+  >
   <mat-icon aria-hidden="false" aria-label="Example home icon">drag_indicator</mat-icon>
+  
 </div>
-
-{{timePeriod}}
-
-
+{{col.id}}
+<!-- {{timePeriod}} -->
+<button (click)="sendStyleSwitch()"></button>

@@ -6,18 +6,22 @@
   >
   
   
-  <div 
+  <div     
     class="example-box" 
-    [ngStyle]="{'background-color': 'blue' }"
     cdkDragLockAxis="x"
-    *ngFor="let timePeriod of timePeriods" 
     cdkDrag
+    *ngFor = "let col of cols"
     >
+    <!-- [ngStyle]="{'background-color': styleSwitch }" -->
+    <!-- *ngFor="let timePeriod of timePeriods"  -->    
 
     <amp-col 
-      [timePeriod]="timePeriod" 
+      (styleSwitchEvent)="receivesStyleSwitch($event)"
+      [styleSwitch]="styleSwitch"
       cdkDragHandle
+      [col]="col"
       >
+      <!-- [timePeriod]="timePeriod" -->
     </amp-col>        
     
   </div>

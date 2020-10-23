@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+
 
 @Component({
   selector: 'amp-col',
@@ -6,8 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./amp-col.component.scss']
 })
 export class AmpColComponent implements OnInit {
-@Input() timePeriod: string;
+// @Input() timePeriod: string;
+@Input() col: any; // Object
+@Input() styleSwitch: string;
 
+@Output() styleSwitchEvent = new EventEmitter<any>();
+
+
+
+// @HostListener('window:mousemove', ['$event'])
+sendStyleSwitch(){
+  this.styleSwitchEvent.emit({id: this.col.id,  color: "blue"})
+}
 
   constructor() { }
 
