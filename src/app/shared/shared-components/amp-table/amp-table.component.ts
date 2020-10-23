@@ -15,15 +15,15 @@ export class AmpTableComponent  {
   readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
   // readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
 
-  posts: Observable<any>;
+  tasks: Observable<any>;
  
   constructor(public http: HttpClient) { }
 
-    getPosts(){
+    getTasks(){
       // let headers = new HttpHeaders().set('Authorization', 'pk_10679142_R6E47B4Z2RQA7AENVWSGS43T6J4NIF0D')
       
 
-      this.posts = this.http.get(this.ROOT_URL + '/posts')
+      this.tasks = this.http.get(this.ROOT_URL + '/tasks')
       // this.posts = this.http.get(this.ROOT_URL + '/db')
     }
 

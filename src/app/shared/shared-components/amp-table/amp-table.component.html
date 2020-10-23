@@ -28,8 +28,8 @@
   
   
 </div>
-<button (click)="getPosts()">Get Posts</button>
+<button (click)="getTasks()">Get Posts</button>
 
-<div *ngFor="let post of posts | async">
-  {{ post | json}}
+<div *ngFor="let task of tasks | async">
+  {{ task | json}}
 </div>
