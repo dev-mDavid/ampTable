@@ -1,9 +1,9 @@
-import * actions from "./col.action";
+import * as actions from "./col.action";
 import { EntityState, createEntityAdapter  } from "@ngrx/entity";
 import { createFeatureSelector } from "@ngrx/store";
 
 export interface Col{
- id: number,
+ id: string,
  name: string,
  width: number,
 }
@@ -13,22 +13,65 @@ export const colAdapter = createEntityAdapter<Col>();
 export interface State extends EntityState<Col> { }
 
 // Default Data / Initial State
+// const defaultCol = [
+//   {
+//       id: 1,
+//       name: "Ids",       
+//       width: 200,
+//     },
+//     {
+//       id: 2,
+//       name: "Name",
+//       width: 200,
+//     },
+//     {
+//       id: 3,
+//       name: "Status",
+//       width: 200,
+//     },
+//     {
+//       id: 4,
+//       name: "Creator",
+//       width: 200,
+//     },
+// ]
+
 const defaultCol = {
-  ids: ['123'],
+  ids: [
+    '0', 
+    '1',
+    '2',
+    '3',
+  ],
   entities: {
-    '123': {
-      id: '123',
-      name: 'New Col',
+    '0': {
+      id: '0',
+      name: 'Ids',
       width: 200,
-    }
+    },
+    '1': {
+      id:'1',
+      name: 'Name',
+      width: 200,
+    },
+    '2': {
+      id:'2',
+      name: 'Status',
+      width: 200,
+    },
+    '3': {
+      id:'3',
+      name: 'Creator',
+      width: 200,
+    },
   }
 }
 
-export const intialState: State = colAdapter.getInitialState(defaultCol)
+export const initialState: State = colAdapter.getInitialState(defaultCol)
 
 // Reducer
 export function colReducer(
-  state: State = intialState,
+  state: State = initialState,
   action: actions.ColActions) {
 
   switch (action.type) {

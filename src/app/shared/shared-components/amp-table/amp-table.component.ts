@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
+import { Store } from "@ngrx/store";
+import {  Observable, of, map, Subscription } from 'rxjs';
+import * as fromCol from "../../../core/col.reducer";
+import * as actions from "../../../core/col.action";
+
+import { Col } from "../../../core/col.reducer";
 import { HttpClient } from "@angular/common/http";
 import { HttpHeaders } from "@angular/common/http";
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'amp-table',
@@ -16,73 +21,61 @@ export class AmpTableComponent  {
   // readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
 
   tasks: Observable<any>;
- 
-  constructor(public http: HttpClient) { }
 
-    getTasks(){
-      // let headers = new HttpHeaders().set('Authorization', 'pk_10679142_R6E47B4Z2RQA7AENVWSGS43T6J4NIF0D')
-      
+  cols: Array<any>;
+  colArray: Subscription;
 
-      this.tasks = this.http.get(this.ROOT_URL + '/tasks')
-      // this.posts = this.http.get(this.ROOT_URL + '/db')
+  constructor(
+    public http: HttpClient,
+    private store: Store<fromCol.State>
+    ) { }
+
+  ngOnInit(){
+
+    this.colArray = this.store.select(fromCol.selectAll).subscribe(cols => {
+      this.cols = cols
+    })   
+
+  }
+  
+  createCol() {
+    const col: fromCol.Col = {
+      id: new Date().getUTCMilliseconds().toString(),
+      name: 'Col Name',
+      width: 200,
     }
 
-styleSwitch = "green"
-  
+    this.store.dispatch( new actions.Create(col))
+  }
 
-  cols = [
-     {
-      position: 0,
-      id: 1,
-      name: "Ids",       
-      width: 200,
-      color: "green",
-    },
-    {
-      position: 1,
-      id: 2,
-      name: "Name",
-      width: 200,
-      color: "green",
-    },
-    {
-      position: 2,
-      id: 3,
-      name: "Status",
-      width: 200,
-      color: "green",
-    },
-    {
-      position: 3,
-      id: 4,
-      name: "Creator",
-      width: 200,
-      color: "red"
-    },
+  updateTask(id, name) {
+    this.store.dispatch( new actions.Update(id, {name: name}))
+  }
+
+  deleteCol(id) {
+    this.store.dispatch( new actions.Delete(id))
+  }
+
+  getTasks(){
+    // let headers = new HttpHeaders().set('Authorization', 'pk_10679142_R6E47B4Z2RQA7AENVWSGS43T6J4NIF0D')
     
-  ]
 
-  timePeriods = [
-    'Bronze age',
-    'Iron age',
-    'Middle ages',
-    'Early modern period',
-    'Long nineteenth century'
-  ];
-
-receivesStyleSwitch($event){
-  
-  
-  
-}
+    this.tasks = this.http.get(this.ROOT_URL + '/tasks')
+    // this.posts = this.http.get(this.ROOT_URL + '/db')
+  }
 
   drop(event: CdkDragDrop<string[]>) {
-    // event.currentIndex = this.cols.position
     moveItemInArray(this.cols, event.previousIndex, event.currentIndex);
     
-    this.cols[event.currentIndex].position = event.currentIndex;
     console.log(this.cols)
     
   }
 
+  showThis(){
+    console.log(this.store)
+  }
+
+  ngOnDestroy(){
+    this.colArray.unsubscribe()   
+  }
 }

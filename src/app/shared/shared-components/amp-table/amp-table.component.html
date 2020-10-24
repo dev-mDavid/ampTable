@@ -1,33 +1,27 @@
+
+<!-- Drag & Drop Columns -->
 <div 
   cdkDropList 
   cdkDropListOrientation="horizontal" 
   class="example-list" 
-  (cdkDropListDropped)="drop($event)"
-  >
-  
+  (cdkDropListDropped)="drop($event)" >
   
   <div     
     class="example-box" 
     cdkDragLockAxis="x"
     cdkDrag
-    *ngFor = "let col of cols"
-    >
-    <!-- [ngStyle]="{'background-color': styleSwitch }" -->
-    <!-- *ngFor="let timePeriod of timePeriods"  -->    
-
+    *ngFor = "let col of cols" >
+    
     <amp-col 
-      (styleSwitchEvent)="receivesStyleSwitch($event)"
-      [styleSwitch]="styleSwitch"
-      cdkDragHandle
       [col]="col"
-      >
-      <!-- [timePeriod]="timePeriod" -->
+      cdkDragHandle>
     </amp-col>        
     
   </div>
   
-  
 </div>
+
+<!-- HTTP GET Request-->
 <button (click)="getTasks()">Get Posts</button>
 
 <div *ngFor="let task of tasks | async">
