@@ -7,19 +7,24 @@
   (cdkDropListDropped)="drop($event)" >
   
   <div     
-    class="example-box" 
+    
     cdkDragLockAxis="x"
     cdkDrag
     *ngFor = "let col of cols" >
     
     <amp-col 
       [col]="col"
-      cdkDragHandle>
+      [width]="width"
+      cdkDragHandle
+      (widthEvent)="receivesWidth($event)">
     </amp-col>        
     
   </div>
   
 </div>
+
+
+<button (click)="createCol()">+</button>
 
 <!-- HTTP GET Request-->
 <button (click)="getTasks()">Get Posts</button>
@@ -27,3 +32,6 @@
 <div *ngFor="let task of tasks | async">
   {{ task | json}}
 </div>
+
+<!-- Show Store -->
+<button (click)="showStore()">Show Store</button>

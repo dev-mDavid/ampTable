@@ -1,15 +1,31 @@
+<!-- Box -->
+<div 
+  class="example-box"
+  [ngStyle]="{'width': widthPx}">
 
-<div class="example-handle" 
-  [ngStyle]="{'background-color': col.color}"
-   >
+  <!-- Handle Indicator -->
+  <div class="example-handle" >
+    <mat-icon 
+      cdkDragHandle
+      aria-hidden="false" 
+      aria-label="Example home icon">
+      drag_indicator
+    </mat-icon>    
+  </div>
 
-  <mat-icon 
-    cdkDragHandle
-    aria-hidden="false" 
-    aria-label="Example home icon">
-    drag_indicator
-  </mat-icon>
+  <!-- Column Name -->
+  <div>
+    {{ col.name }}
+  </div>
+
   
+  <div>
+    <button 
+      (click)="changeWidth({id: col.id, width: 150})">
+
+      Change Width
+    </button>
+  </div>
 </div>
 
-{{ col.name }}
+

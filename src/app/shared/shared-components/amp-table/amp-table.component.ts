@@ -22,6 +22,7 @@ export class AmpTableComponent  {
 
   tasks: Observable<any>;
 
+  
   cols: Array<any>;
   colArray: Subscription;
 
@@ -36,6 +37,9 @@ export class AmpTableComponent  {
       this.cols = cols
     })   
 
+    console.log(this.cols)
+
+
   }
   
   createCol() {
@@ -48,8 +52,12 @@ export class AmpTableComponent  {
     this.store.dispatch( new actions.Create(col))
   }
 
-  updateTask(id, name) {
+  updateColName(id, name) {
     this.store.dispatch( new actions.Update(id, {name: name}))
+  }
+
+  updateColWidth(id, width) {
+    this.store.dispatch( new actions.Update(id, {width: width}))
   }
 
   deleteCol(id) {
@@ -71,7 +79,34 @@ export class AmpTableComponent  {
     
   }
 
-  showThis(){
+
+  width: number = 199;
+
+  getObjectKeys(obj){
+    for (let k of Object.keys(obj)){
+      console.log(k)
+    }
+  }
+
+  getObjectValuesInArray(obj){
+    let array = []
+    for (let k of Object.values(obj)){
+      array.push(k)
+    }
+    console.log(array)
+    return array
+  }
+
+  receivesWidth($event) {
+    this.width = $event
+    // this.getObjectValuesInArray($event) 
+
+    this.updateColWidth($event.id, $event.width)
+    
+    // console.log($event + "— Received")
+  }
+
+  showStore(){
     console.log(this.store)
   }
 
