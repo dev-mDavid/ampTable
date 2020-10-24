@@ -31,36 +31,35 @@ styleSwitch = "green"
   
 
   cols = [
-    {
+     {
+      position: 0,
       id: 1,
-      name: "apple",       
+      name: "Ids",       
       width: 200,
       color: "green",
     },
     {
+      position: 1,
       id: 2,
-      name: "banana",
+      name: "Name",
       width: 200,
       color: "green",
     },
     {
+      position: 2,
       id: 3,
-      name: "orange",
+      name: "Status",
       width: 200,
       color: "green",
     },
     {
+      position: 3,
       id: 4,
-      name: "grape",
+      name: "Creator",
       width: 200,
       color: "red"
     },
-    {
-      id: 5,
-      name: "kiwi",
-      width: 200,
-      color: "green"
-    },
+    
   ]
 
   timePeriods = [
@@ -78,7 +77,12 @@ receivesStyleSwitch($event){
 }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+    // event.currentIndex = this.cols.position
+    moveItemInArray(this.cols, event.previousIndex, event.currentIndex);
+    
+    this.cols[event.currentIndex].position = event.currentIndex;
+    console.log(this.cols)
+    
   }
 
 }
