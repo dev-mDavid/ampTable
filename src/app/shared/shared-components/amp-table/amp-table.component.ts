@@ -80,8 +80,6 @@ export class AmpTableComponent  {
   }
 
 
-  width: number = 199;
-
   getObjectKeys(obj){
     for (let k of Object.keys(obj)){
       console.log(k)

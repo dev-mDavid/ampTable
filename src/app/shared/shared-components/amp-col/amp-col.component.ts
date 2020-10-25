@@ -19,7 +19,7 @@ widthPx: string;
   constructor() { }
 
   ngOnInit(): void {
-    this.widthPx = this.width + this.px;    
+    this.widthPx = this.col.width + this.px;    
     // console.log(this.width + " — amp-col onInit width")
   }
 
