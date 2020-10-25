@@ -10,6 +10,7 @@ export class AmpColComponent implements OnInit {
 // Data-Sharing
   @Input() col: any; // Object
   @Output() widthEvent = new EventEmitter<object>();
+  @Output() deleteEvent = new EventEmitter<object>();
 
 // Template Variables
   widthPx: string;
@@ -29,4 +30,7 @@ export class AmpColComponent implements OnInit {
     this.widthEvent.emit(val)
   }
 
+  deleteCol(val: object){
+    this.deleteEvent.emit(val)
+  }
 }

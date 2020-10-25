@@ -1,6 +1,10 @@
 <!-- Add Column Button -->
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="createCol('Ids')">Ids</button>
+  <button mat-menu-item (click)="createCol('Name')">Name</button>
+  <button mat-menu-item (click)="createCol('Status')">Status</button>
+  <button mat-menu-item (click)="createCol('Creator')">Creator</button>
   <button mat-menu-item (click)="createCol('Date Created')">Date Created</button>
   <button mat-menu-item (click)="createCol('Date Updated')">Date Updated</button>
   <button mat-menu-item (click)="createCol('Date Closed')">Date Closed</button>
@@ -30,7 +34,8 @@
     
     <amp-col 
       [col]="col"
-      (widthEvent)="receivesWidth($event)">
+      (widthEvent)="receivesWidth($event)"
+      (deleteEvent)="receivesDelete($event)">
     </amp-col>        
     
   </div>

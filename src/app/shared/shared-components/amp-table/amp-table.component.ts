@@ -89,5 +89,9 @@ ngOnDestroy(){
   receivesWidth($event) {
     this.updateColWidth($event.id, $event.width)
   }
+
+  receivesDelete($event) {
+    this.deleteCol($event.id)
+  }
  
 }
