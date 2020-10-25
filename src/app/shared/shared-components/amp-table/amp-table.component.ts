@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 import { Store } from "@ngrx/store";
-import {  Observable, of, map, Subscription } from 'rxjs';
+import {  Observable, of, Subscription } from 'rxjs';
 import * as fromCol from "../../../core/col.reducer";
 import * as actions from "../../../core/col.action";
 
@@ -17,12 +17,9 @@ import { HttpHeaders } from "@angular/common/http";
 })
 export class AmpTableComponent  {
 
-  readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
-  // readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
+  
 
   tasks: Observable<any>;
-
-  
   cols: Array<any>;
   colArray: Subscription;
 
@@ -31,18 +28,26 @@ export class AmpTableComponent  {
     private store: Store<fromCol.State>
     ) { }
 
+// Life-Cycle Hooks
   ngOnInit(){
-
     this.colArray = this.store.select(fromCol.selectAll).subscribe(cols => {
       this.cols = cols
     })   
-
-    console.log(this.cols)
-
-
   }
+
+  ngOnDestroy(){
+    this.colArray.unsubscribe()   
+  }
+
+// Http Requests
+  readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
   
-  createCol() {
+  getTasks(){    
+    this.tasks = this.http.get(this.ROOT_URL + '/tasks')
+  }
+
+// NgRx Store CRUD Operations
+  createCol() {    
     const col: fromCol.Col = {
       id: new Date().getUTCMilliseconds().toString(),
       name: 'Col Name',
@@ -55,7 +60,7 @@ export class AmpTableComponent  {
   updateColName(id, name) {
     this.store.dispatch( new actions.Update(id, {name: name}))
   }
-
+  
   updateColWidth(id, width) {
     this.store.dispatch( new actions.Update(id, {width: width}))
   }
@@ -64,51 +69,14 @@ export class AmpTableComponent  {
     this.store.dispatch( new actions.Delete(id))
   }
 
-  getTasks(){
-    // let headers = new HttpHeaders().set('Authorization', 'pk_10679142_R6E47B4Z2RQA7AENVWSGS43T6J4NIF0D')
-    
-
-    this.tasks = this.http.get(this.ROOT_URL + '/tasks')
-    // this.posts = this.http.get(this.ROOT_URL + '/db')
-  }
-
+//  Drag & Drop [Column] Functionality 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.cols, event.previousIndex, event.currentIndex);
-    
-    console.log(this.cols)
-    
+    moveItemInArray(this.cols, event.previousIndex, event.currentIndex);    
   }
 
-
-  getObjectKeys(obj){
-    for (let k of Object.keys(obj)){
-      console.log(k)
-    }
-  }
-
-  getObjectValuesInArray(obj){
-    let array = []
-    for (let k of Object.values(obj)){
-      array.push(k)
-    }
-    console.log(array)
-    return array
-  }
-
+// Data Sharing: Child-to-Parent [amp-col to amp-table]
   receivesWidth($event) {
-    this.width = $event
-    // this.getObjectValuesInArray($event) 
-
     this.updateColWidth($event.id, $event.width)
-    
-    // console.log($event + "— Received")
   }
-
-  showStore(){
-    console.log(this.store)
-  }
-
-  ngOnDestroy(){
-    this.colArray.unsubscribe()   
-  }
+ 
 }

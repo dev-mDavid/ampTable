@@ -4,7 +4,7 @@
   [ngStyle]="{'width': widthPx}">
 
   <!-- Handle Indicator -->
-  <div class="example-handle" >
+  <div class="example-handle">
     <mat-icon 
       cdkDragHandle
       aria-hidden="false" 
@@ -14,16 +14,25 @@
   </div>
 
   <!-- Column Name -->
-  <div>
+  <div cdkDragHandleDisabled>
     {{ col.name }}
   </div>
-
   
   <div>
     <button 
-      (click)="changeWidth({id: col.id, width: 150})">
+      (click)="changeWidth({id: col.id, width: 150})"
+      cdkDragHandleDisabled>
 
-      Change Width
+      Change Width<br>
+       — 150
+    </button>
+    
+    <button 
+      (click)="changeWidth({id: col.id, width: 200})"
+      cdkDragHandleDisabled>
+
+      Change Width<br>
+      — 200
     </button>
   </div>
 </div>

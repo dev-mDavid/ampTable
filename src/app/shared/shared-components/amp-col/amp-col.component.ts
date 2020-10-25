@@ -7,29 +7,26 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
   styleUrls: ['./amp-col.component.scss']
 })
 export class AmpColComponent implements OnInit {
-@Input() col: any; // Object
+// Data-Sharing
+  @Input() col: any; // Object
+  @Output() widthEvent = new EventEmitter<object>();
 
-@Input() width: number;
-@Output() widthEvent = new EventEmitter<object>();
+// Template Variables
+  widthPx: string;
 
-px: string = 'px';
-widthPx: string;
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.widthPx = this.col.width + this.px;    
-    // console.log(this.width + " — amp-col onInit width")
+// Life-Cyle Hooks
+  ngOnInit() {
+    this.widthNumToString(this.col.width)
   }
 
-  calcWidthPx(width){
-    return width + 'px'
+  widthNumToString(width: number){
+    const px = 'px';
+    return this.widthPx = width + px;
   }
 
-  changeWidth(val) {
+// Data Sharing: Child-to-Parent [amp-col to amp-table]
+  changeWidth(val: object) {
     this.widthEvent.emit(val)
-    // this.widthEvent.emit(this.width)
   }
 
 }
