@@ -35,9 +35,10 @@ export class AmpTableComponent  {
     })   
   }
 
-  ngOnDestroy(){
+ngOnDestroy(){
     this.colArray.unsubscribe()   
   }
+  
 
 // Http Requests
   readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
@@ -47,10 +48,10 @@ export class AmpTableComponent  {
   }
 
 // NgRx Store CRUD Operations
-  createCol() {    
+  createCol(colName: string = 'Col Name') {    
     const col: fromCol.Col = {
       id: new Date().getUTCMilliseconds().toString(),
-      name: 'Col Name',
+      name: colName,
       width: 200,
     }
 
@@ -78,12 +79,12 @@ export class AmpTableComponent  {
     moveItemInArray(this.cols, event.previousIndex, event.currentIndex);    
 
     // Updates Sorting Position of All Columns
-    for(let i = 0; i < this.cols.length; i++){      
-      this.updateColId(this.cols[i], i.toString()) 
-    }
+    // for(let i = 0; i < this.cols.length; i++){      
+    //   this.updateColId(this.cols[i], i.toString()) 
+    // }
 
   }
-
+  
 // Data Sharing: Child-to-Parent [amp-col to amp-table]
   receivesWidth($event) {
     this.updateColWidth($event.id, $event.width)

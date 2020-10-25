@@ -1,3 +1,20 @@
+<!-- Add Column Button -->
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="createCol('Date Created')">Date Created</button>
+  <button mat-menu-item (click)="createCol('Date Updated')">Date Updated</button>
+  <button mat-menu-item (click)="createCol('Date Closed')">Date Closed</button>
+  <button mat-menu-item (click)="createCol('Assignees')">Assignees</button>
+  <button mat-menu-item (click)="createCol('Checklists')">Checklists</button>
+  <button mat-menu-item (click)="createCol('Tags')">Tags</button>
+  <button mat-menu-item (click)="createCol('Priority')">Priority</button>
+  <button mat-menu-item (click)="createCol('Due Date')">Due Date</button>
+  <button mat-menu-item (click)="createCol('Start Date')">Start Date</button>
+  <button mat-menu-item (click)="createCol('Time Estimate')">Time Estimate</button>
+  <button mat-menu-item (click)="createCol('Time Spent')">Time Spent</button>
+  <button mat-menu-item (click)="createCol('List')">List</button>
+</mat-menu>
+
 
 <!-- Drag & Drop Columns -->
 <div 
