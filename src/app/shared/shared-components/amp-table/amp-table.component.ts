@@ -57,6 +57,10 @@ export class AmpTableComponent  {
     this.store.dispatch( new actions.Create(col))
   }
 
+  updateColId(id, newId) {
+    this.store.dispatch( new actions.Update(id, {id: newId}))
+  }
+
   updateColName(id, name) {
     this.store.dispatch( new actions.Update(id, {name: name}))
   }
@@ -72,6 +76,12 @@ export class AmpTableComponent  {
 //  Drag & Drop [Column] Functionality 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.cols, event.previousIndex, event.currentIndex);    
+
+    // Updates Sorting Position of All Columns
+    for(let i = 0; i < this.cols.length; i++){      
+      this.updateColId(this.cols[i], i.toString()) 
+    }
+
   }
 
 // Data Sharing: Child-to-Parent [amp-col to amp-table]
