@@ -33,13 +33,14 @@
   (cdkDropListDropped)="drop($event)" >
   
   <div         
-    cdkDragLockAxis="x"
-    cdkDrag
-    *ngFor = "let col of cols" >
-    
-    
-    
-    <amp-col                 
+  cdkDragLockAxis="x"
+  cdkDrag
+  class="box"
+  *ngFor = "let col of cols" >
+  
+  
+  
+  <amp-col                       
       [col]="col"
       [tasks]="tasks"
       (widthEvent)="receivesWidth($event)"
