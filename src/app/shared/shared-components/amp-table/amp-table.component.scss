@@ -1,4 +1,5 @@
 .example-list {
+  
   width: 100%;
   max-width: 100%;
   border: solid 1px #ccc;
@@ -7,7 +8,7 @@
   flex-direction: row;
   background: white;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 
@@ -99,3 +100,24 @@
   border: none;
 }
 
+.drag-handle {
+  position: relative;
+  margin-top: 10px;
+  margint-left: 10px;
+  top: -150px;
+  left: 10px;
+  color: #ccc;
+  cursor: grab;
+  width: 24px;
+  height: 24px;
+  z-index: 100;
+
+  &:hover {
+    color: rgb(124, 124, 124);
+  }
+  
+  &:active{
+    color: rgb(124, 124, 124);
+    cursor: grabbing;
+  }
+}

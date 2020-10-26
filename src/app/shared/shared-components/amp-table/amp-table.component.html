@@ -23,22 +23,29 @@
 <!-- Drag & Drop Columns -->
 <div 
   cdkDropList 
-  cdkDropListOrientation="horizontal" 
+  cdkDropListOrientation="horizontal"   
   class="example-list" 
   (cdkDropListDropped)="drop($event)" >
   
-  <div     
+  <div         
     cdkDragLockAxis="x"
     cdkDrag
     *ngFor = "let col of cols" >
-
-    <amp-col 
+    
+    
+    
+    <amp-col                 
       [col]="col"
       [tasks]="tasks"
       (widthEvent)="receivesWidth($event)"
-      (deleteEvent)="receivesDelete($event)">
+      (deleteEvent)="receivesDelete($event)">    
     </amp-col>        
+    
+    <mat-icon class="drag-handle" cdkDragHandle>
+      drag_indicator
+    </mat-icon>
 
+    
   </div>
   
 </div>

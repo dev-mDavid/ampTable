@@ -20,6 +20,7 @@
 .example-box {
   
   // width: 200px;
+  // min-height: 150px;
   height: 200px;
   padding: 10px;
   box-sizing: border-box;
@@ -78,6 +79,23 @@
     cursor: pointer;
   }
 }
+
+.width-handle--change {
+  position: absolute;
+  top: 42.5px;
+  right: 10px;
+  color: #cccccc;
+  cursor: ew-resize;
+  width: 24px;
+  height: 100px;
+  
+  &:hover{    
+    color: rgb(124, 124, 124);
+    cursor: ew-resize;
+  }
+}
+
+
 
 .resize-handle{  
   // cursor: ew-resize;

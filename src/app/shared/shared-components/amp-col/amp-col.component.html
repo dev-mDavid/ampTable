@@ -4,22 +4,29 @@
   [ngStyle]="{'width': widthPx}">
 
   <!-- Handle Indicator -->
-  <div class="drag-handle">
-    <mat-icon cdkDragHandle>
-      drag_indicator
-    </mat-icon>    
-  </div>
+  <!-- <mat-icon class="drag-handle" cdkDragHandle>
+    drag_indicator
+  </mat-icon> -->
 
+
+  <!-- Delete Column Button -->
   <div class="delete-button">
     <mat-icon (click)="deleteCol({id: col.id})">
       close
     </mat-icon>
   </div>
 
+  <!-- Change-Width Handle Indicator -->
+  <div class="width-handle--change">
+    <mat-icon cdkDragDisabled>
+      horizontal_distribute
+    </mat-icon>
+  </div>
+
   <!-- Column Name -->
   <div cdkDragHandleDisabled>
-    {{ col.name }}
-
+    <h2>{{ col.name }}</h2>
+    <hr>
   
   <div>
     <!-- <button 
@@ -43,7 +50,7 @@
         <div class="rows">
           <p>{{ task[this.col.sc_name] }}</p>
         </div>
-      </div>
+      </div>      
     </div>
 
   </div>
