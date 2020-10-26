@@ -4,13 +4,16 @@
   [ngStyle]="{'width': widthPx}">
 
   <!-- Handle Indicator -->
-  <div class="example-handle">
-    <mat-icon 
-      cdkDragHandle
-      aria-hidden="false" 
-      aria-label="Example home icon">
+  <div class="drag-handle">
+    <mat-icon cdkDragHandle>
       drag_indicator
     </mat-icon>    
+  </div>
+
+  <div class="delete-button">
+    <mat-icon (click)="deleteCol({id: col.id})">
+      close
+    </mat-icon>
   </div>
 
   <!-- Column Name -->
@@ -33,13 +36,7 @@
 
       Change Width<br>
       — 200
-    </button>
-    <button 
-      (click)="deleteCol({id: col.id})"
-      cdkDragHandleDisabled>
-      X
-      
-    </button>
+    </button>    
   </div>
 </div>
 
