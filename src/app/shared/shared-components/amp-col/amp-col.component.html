@@ -19,32 +19,34 @@
   <!-- Column Name -->
   <div cdkDragHandleDisabled>
     {{ col.name }}
-  </div>
+
   
   <div>
-    <button 
+    <!-- <button 
       (click)="changeWidth({id: col.id, width: 150})"
       cdkDragHandleDisabled>
 
       Change Width<br>
        — 150
-    </button>
+    </button> -->
     
-    <button 
+    <!-- <button 
       (click)="changeWidth({id: col.id, width: 200})"
       cdkDragHandleDisabled>
 
       Change Width<br>
       — 200
-    </button>    
+    </button>     -->
+    
     <div *ngFor="let task of tasks | async">
-
-      <div 
-        class="rows"
-        *ngIf="this.col.sc_name">
-        {{ task[this.col.sc_name] }}
+      <div *ngIf="this.col.sc_name">        
+        <div class="rows">
+          <p>{{ task[this.col.sc_name] }}</p>
+        </div>
       </div>
     </div>
+
+  </div>
 
   </div>
 </div>
