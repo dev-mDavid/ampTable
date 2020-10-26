@@ -54,6 +54,7 @@ ngOnDestroy(){
     const col: fromCol.Col = {
       id: new Date().getUTCMilliseconds().toString(),
       name: colName,
+      sc_name: this.snakeCase(colName),
       width: 200,
     }
 
@@ -103,6 +104,14 @@ ngOnDestroy(){
     // }
 
   }
+
+  snakeCase(words: string){
+      return words.replace(/\W+/g, " ")
+        .split(/ |\B(?=[A-Z])/)
+        .map(word => word.toLowerCase())
+        .join('_'); 
+   }
+ 
   
 // Data Sharing: Child-to-Parent [amp-col to amp-table]
   receivesWidth($event) {

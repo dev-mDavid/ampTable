@@ -5,6 +5,7 @@ import { createFeatureSelector } from "@ngrx/store";
 export interface Col{
  id: string,
  name: string,
+ sc_name: string,
  width: number,
 }
 
@@ -46,22 +47,26 @@ const defaultCol = {
   entities: {
     '0': {
       id: '0',
-      name: 'Ids',
+      name: 'Id',
+      sc_name: 'id',
       width: 200,
     },
     '1': {
       id:'1',
       name: 'Name',
+      sc_name: 'name',
       width: 200,
     },
     '2': {
       id:'2',
       name: 'Status',
+      sc_name: 'status',
       width: 200,
     },
     '3': {
       id:'3',
       name: 'Creator',
+      sc_name: 'creator',
       width: 200,
     },
   }
