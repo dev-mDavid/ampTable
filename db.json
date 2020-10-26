@@ -1,356 +1,115 @@
 {
   "tasks": [
     {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
+      "id": "3000",
+      "name": "Deliver Peter's Suit (MK IV).",
       "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
+      "orderindex": "1",
+      "date_created": "2020-10-27",
+      "date_updated": "2020-10-27",
+      "date_closed": "2020-11-27",
+      "creator": "Tony Stark",
+      "assignees": "Happy Hogan",
+      "checklists": "null",
+      "tags": "suits",
+      "parent": "null",
+      "priority": "null",
+      "due_date": "null",
+      "start_date": "null",
+      "time_estimate": "null",
+      "time_spent": "null",
+      "list": "123",
+      "folder": "456",
+      "space": "789"
     },
     {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
+      "id": "0007",
+      "name": "Research horcrux at the library",
+      "status": "Completed",
+      "orderindex": "2",
+      "date_created": "1997-02-23",
+      "date_updated": "1997-02-23",
+      "date_closed": "1997-03-23",
+      "creator": "Hermione Granger",
+      "assignees": "Harry Potter, Ron Weasley",
+      "checklists": "null",
+      "tags": "suits",
+      "parent": "null",
+      "priority": "null",
+      "due_date": "null",
+      "start_date": "null",
+      "time_estimate": "null",
+      "time_spent": "null",
+      "list": "123",
+      "folder": "456",
+      "space": "789"
     },
     {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
+      "id": "1138",
+      "name": "Teach young padawan Force Push",
       "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
+      "orderindex": "3",
+      "date_created": "1977-05-25",
+      "date_updated": "1977-05-25",
+      "date_closed": "1977-06-25",
+      "creator": "Obi-Wan Kenobi",
+      "assignees": "Luke Skywalker, R2-D2, C-3PO",
+      "checklists": "null",
+      "tags": "suits",
+      "parent": "null",
+      "priority": "null",
+      "due_date": "null",
+      "start_date": "null",
+      "time_estimate": "null",
+      "time_spent": "null",
+      "list": "123",
+      "folder": "456",
+      "space": "789"
     },
     {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
+      "id": "0027",
+      "name": "Decode riddle on the playing card",
+      "status": "Completed",
+      "orderindex": "4",
+      "date_created": "1939-02-15",
+      "date_updated": "1939-02-15",
+      "date_closed": "1939-03-15",
+      "creator": "Alfred Pennyworth",
+      "assignees": "Bruce Wayne, Lucius Fox, Carrie Kelly",
+      "checklists": "null",
+      "tags": "suits",
+      "parent": "null",
+      "priority": "null",
+      "due_date": "null",
+      "start_date": "null",
+      "time_estimate": "null",
+      "time_spent": "null",
+      "list": "123",
+      "folder": "456",
+      "space": "789"
     },
     {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
+      "id": "A113",
+      "name": "Grand Opening this Weekend!",
       "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
+      "orderindex": "4",
+      "date_created": "2007-07-02",
+      "date_updated": "2007-07-02",
+      "date_closed": "2007-08-02",
+      "creator": "Remy",
+      "assignees": "Afredo Linguini, Colette Tatou, Anton Ego",
+      "checklists": "null",
+      "tags": "suits",
+      "parent": "null",
+      "priority": "null",
+      "due_date": "null",
+      "start_date": "null",
+      "time_estimate": "null",
+      "time_spent": "null",
+      "list": "123",
+      "folder": "456",
+      "space": "789"
     },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
-    },
-    {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
-    },
-    {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
-    },
-    {
-    "id": "9hx",
-    "name": "New Task Name",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "1.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hx"
-    },
-    {
-    "id": "9hz",
-    "name": "Second task",
-    "status": {
-      "status": "Open",
-      "color": "#d3d3d3",
-      "orderindex": 0,
-      "type": "open"
-    },
-    "orderindex": "2.00000000000000000000000000000000",
-    "date_created": "1567780450202",
-    "date_updated": "1567780450202",
-    "date_closed": null,
-    "creator": {
-      "id": 183,
-      "username": "John Doe",
-      "color": "#827718",
-      "profilePicture": "https://attachments-public.clickup.com/profilePictures/183_abc.jpg"
-    },
-    "assignees": [],
-    "checklists": [],
-    "tags": [],
-    "parent": null,
-    "priority": null,
-    "due_date": null,
-    "start_date": null,
-    "time_estimate": null,
-    "time_spent": null,
-    "list": {
-      "id": "123"
-    },
-    "folder": {
-      "id": "456"
-    },
-    "space": {
-      "id": "789"
-    },
-    "url": "https://app.clickup.com/t/9hz"
-    }
   ]
   
 }
