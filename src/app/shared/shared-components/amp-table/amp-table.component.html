@@ -1,7 +1,9 @@
 <!-- Add Column Button -->
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="createCol('id')">id</button>
   <button mat-menu-item (click)="createCol('Ids')">Ids</button>
+  <button mat-menu-item (click)="createCol('name')">Name</button>
   <button mat-menu-item (click)="createCol('Name')">Name</button>
   <button mat-menu-item (click)="createCol('Status')">Status</button>
   <button mat-menu-item (click)="createCol('Creator')">Creator</button>
@@ -31,13 +33,14 @@
     cdkDragLockAxis="x"
     cdkDrag
     *ngFor = "let col of cols" >
-    
+
     <amp-col 
       [col]="col"
+      [tasks]="tasks"
       (widthEvent)="receivesWidth($event)"
       (deleteEvent)="receivesDelete($event)">
     </amp-col>        
-    
+
   </div>
   
 </div>
@@ -48,6 +51,7 @@
 <!-- HTTP GET Request-->
 <button (click)="getTasks()">Get Posts</button>
 
-<div *ngFor="let task of tasks | async">
-  {{ task | json}}
+<div *ngFor="let task of tasks | async | keyvalue">
+  {{ task.key | json}} : {{ task.value | json}}
 </div>
+

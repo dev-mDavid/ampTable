@@ -33,6 +33,8 @@ export class AmpTableComponent  {
     this.colArray = this.store.select(fromCol.selectAll).subscribe(cols => {
       this.cols = cols
     })   
+
+    this.getTasks();
   }
 
 ngOnDestroy(){

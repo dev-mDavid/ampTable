@@ -37,7 +37,14 @@
       Change Width<br>
       — 200
     </button>    
+    <div *ngFor="let task of tasks | async">
+
+      <div 
+        class="rows"
+        *ngIf="this.col.name">
+        {{ task[this.col.name] }}
+      </div>
+    </div>
+
   </div>
 </div>
-
-

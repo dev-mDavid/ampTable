@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit,  Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 
 @Component({
@@ -9,17 +9,18 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
 export class AmpColComponent implements OnInit {
 // Data-Sharing
   @Input() col: any; // Object
+  @Input() tasks: any; // Object
   @Output() widthEvent = new EventEmitter<object>();
   @Output() deleteEvent = new EventEmitter<object>();
 
 // Template Variables
   widthPx: string;
-
+  matchingKey: string;
 // Life-Cyle Hooks
   ngOnInit() {
-    this.widthNumToString(this.col.width)
+    this.widthNumToString(this.col.width);
   }
-
+  
   widthNumToString(width: number){
     const px = 'px';
     return this.widthPx = width + px;
@@ -33,4 +34,6 @@ export class AmpColComponent implements OnInit {
   deleteCol(val: object){
     this.deleteEvent.emit(val)
   }
+
+  
 }
