@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 import { Store } from "@ngrx/store";
@@ -17,7 +17,6 @@ import { HttpHeaders } from "@angular/common/http";
 })
 export class AmpTableComponent  {
 
-  
 
   tasks: Observable<any>;
   cols: Array<any>;
@@ -26,8 +25,9 @@ export class AmpTableComponent  {
   constructor(
     public http: HttpClient,
     private store: Store<fromCol.State>
-    ) { }
-
+    ) { }  
+    
+    
 // Life-Cycle Hooks
   ngOnInit(){
     this.colArray = this.store.select(fromCol.selectAll).subscribe(cols => {

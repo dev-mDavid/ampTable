@@ -13,18 +13,38 @@ export class AmpColComponent implements OnInit {
   @Output() widthEvent = new EventEmitter<object>();
   @Output() deleteEvent = new EventEmitter<object>();
 
+
+// DOM Events
+
+  mouse = {
+    prevX: null,
+    currX: null,
+  }
+  @HostListener('mousedown', ['$event'])
+  mouseDownListener(event){
+    console.log('mousedown')
+    console.log(event.clientX)
+    this.mouse.prevX = event.clientX
+  }
+    
+  @HostListener('mouseup', ['$event'])
+  mouseUpListener(event){
+    console.log('mouseup')
+    console.log(event.clientX)
+    this.mouse.currX = event.clientX
+    
+
+    this.widthDiff(this.mouse.prevX, this.mouse.currX)
+    
+  }
+  widthDiff(leftX, rightX){
+    let diff = (rightX - leftX)
+    let addedWidths = (this.col.width + diff)    
+    this.changeWidth({id: this.col.id, width: addedWidths})   
+  }
 // Template Variables
   widthPx: string;
-  matchingKey: string;
-  
-  candy: any
-  @HostListener('mousedown', candy)
-  // @HostListener('mouseover', ['$event'])
-  mouseDown(event){
-    // console.log('mousedown')
-    let test= event.clientX;
-    console.log(test)
-  }
+  matchingKey: string;    
 
   
 // Life-Cyle Hooks
