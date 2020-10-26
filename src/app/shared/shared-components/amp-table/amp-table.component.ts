@@ -35,6 +35,8 @@ export class AmpTableComponent  {
     })   
 
     this.getTasks();
+
+    this.showGetRequest(false);
   }
 
 ngOnDestroy(){
@@ -47,6 +49,10 @@ ngOnDestroy(){
   
   getTasks(){    
     this.tasks = this.http.get(this.ROOT_URL + '/tasks')
+  }
+  getRequestVisible: boolean = false;
+  showGetRequest(bool){
+    return this.getRequestVisible = bool;
   }
 
 // NgRx Store CRUD Operations

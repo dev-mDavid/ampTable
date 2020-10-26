@@ -55,13 +55,14 @@
   
 </div>
 
-<!-- Create Anothe Column -->
-<button (click)="createCol()">+</button>
-
 <!-- HTTP GET Request-->
-<button (click)="getTasks()">Get Posts</button>
+<button mat-raised-button color="primary"(click)="showGetRequest(true)">
+  <mat-icon>source</mat-icon>
+</button>
 
-<div *ngFor="let task of tasks | async | keyvalue">
-  {{ task.key | json}} : {{ task.value | json}}
+<div *ngIf="this.getRequestVisible">
+  <div *ngFor="let task of tasks | async | keyvalue">
+    <!-- <pre>{{task | json}}</pre> -->
+    <pre>{{ task.key | json}} : {{ task.value | json}}</pre>
+  </div>
 </div>
-
