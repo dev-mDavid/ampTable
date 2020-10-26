@@ -17,8 +17,15 @@ export class AmpColComponent implements OnInit {
   widthPx: string;
   matchingKey: string;
   
-  
-  
+  candy: any
+  @HostListener('mousedown', candy)
+  // @HostListener('mouseover', ['$event'])
+  mouseDown(event){
+    // console.log('mousedown')
+    let test= event.clientX;
+    console.log(test)
+  }
+
   
 // Life-Cyle Hooks
   ngOnInit() {
