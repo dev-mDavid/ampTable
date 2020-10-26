@@ -1,5 +1,10 @@
 <!-- Add Column Button -->
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<div class="button__add-col">
+  <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">
+    <mat-icon>addchart</mat-icon>
+    <!-- <h3>Add Column</h3> -->
+  </button>
+</div>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="createCol('Id')">Id</button>
   <button mat-menu-item (click)="createCol('Name')">Name</button>
