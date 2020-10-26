@@ -16,6 +16,10 @@ export class AmpColComponent implements OnInit {
 // Template Variables
   widthPx: string;
   matchingKey: string;
+  
+  
+  
+  
 // Life-Cyle Hooks
   ngOnInit() {
     this.widthNumToString(this.col.width);

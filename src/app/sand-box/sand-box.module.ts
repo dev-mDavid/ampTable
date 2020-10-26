@@ -7,10 +7,11 @@ import { SandBoxRoutingModule } from './sand-box-routing.module';
 
 
 import { ObservableToArrayComponent } from './observable-to-array/observable-to-array.component';
+import { DynamicResizingComponent } from './dynamic-resizing/dynamic-resizing.component';
 
 
 @NgModule({
-  declarations: [ObservableToArrayComponent],
+  declarations: [ObservableToArrayComponent, DynamicResizingComponent],
   imports: [
     CommonModule,
     SharedModule,
