@@ -77,7 +77,24 @@ ngOnDestroy(){
 //  Drag & Drop [Column] Functionality 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.cols, event.previousIndex, event.currentIndex);    
+    
+    const
+      arrayActedOn = this.cols,
+      prevIdx = event.previousIndex,
+      currIdx = event.currentIndex,
+      prevCtr = event.previousContainer,
+      ctrData = event.container.data,
+      item = event.item;
 
+    console.log({
+      ctrData,
+      arrayActedOn,
+      prevIdx,
+      currIdx,
+      prevCtr,
+      item,
+    })
+    
     // Updates Sorting Position of All Columns
     // for(let i = 0; i < this.cols.length; i++){      
     //   this.updateColId(this.cols[i], i.toString()) 
