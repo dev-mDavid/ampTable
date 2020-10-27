@@ -14,6 +14,8 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 
 import { AmpTableComponent } from './shared-components/amp-table/amp-table.component';
 import { AmpColComponent } from "./shared-components/amp-col/amp-col.component";
+import { AmpTable2Component } from './shared-components/amp-table2/amp-table2.component';
+import { AmpCol2Component } from './shared-components/amp-col2/amp-col2.component';
 
 const components = [
   AmpTableComponent,
@@ -35,7 +37,7 @@ const modules = [
 
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, AmpTable2Component, AmpCol2Component],
   imports: [...modules],
   exports: [...components, ...modules]
 })
