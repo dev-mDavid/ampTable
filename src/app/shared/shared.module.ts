@@ -8,8 +8,7 @@ import { MatMenuModule } from "@angular/material/menu";
 
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
-// import {  } from "@angular/material/";
-
+import { CdkTableModule } from "@angular/cdk/table";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 
 import { AmpTableComponent } from './shared-components/amp-table/amp-table.component';
@@ -20,6 +19,8 @@ import { AmpCol2Component } from './shared-components/amp-col2/amp-col2.componen
 const components = [
   AmpTableComponent,
   AmpColComponent,  
+  AmpTable2Component, 
+  AmpCol2Component,
 ]
 
 const modules = [
@@ -32,12 +33,13 @@ const modules = [
 
   MatIconModule,
   MatMenuModule,
+  CdkTableModule,
   DragDropModule
 ]
 
 
 @NgModule({
-  declarations: [...components, AmpTable2Component, AmpCol2Component],
+  declarations: [...components],
   imports: [...modules],
   exports: [...components, ...modules]
 })
