@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducerMap, ActionReducer, MetaReducer } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { reducers } from "./reducers";
 
@@ -14,6 +15,12 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 import { NavShellComponent } from './nav-shell/nav-shell.component';
 
+// const reducers: ActionReducerMap<IState> = {todos, visibilityFilter};
+ 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({keys: ['todos']})(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +33,7 @@ import { NavShellComponent } from './nav-shell/nav-shell.component';
     HttpClientModule,
     CoreModule,
     SharedModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers,{metaReducers}),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
