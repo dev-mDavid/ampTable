@@ -1,1 +1,77 @@
-<p>home-page works!</p>
+<div class="page__container">
+<div class="page__title">
+  <h1>ampTable</h1>
+  <hr>
+  <h3>
+    see sepo:
+    <br>
+    <a href="https://github.com/dev-mDavid/ampTable">
+      https://github.com/dev-mDavid/ampTable
+    </a>
+  </h3>
+</div>
+
+  <div class="time--log">
+    <p>
+      Time Worked: <br>
+      ~42 hours
+    </p>
+    <p>Last Updated:<br> 
+      2020-10-26 11:59pm PST
+    </p>
+  </div>
+
+<div class="challenges__container">
+  <hr>
+  <h2>Challenges</h2>  
+  <h3> <b>Aspects of this project I found fun & insightful </b></h3>
+
+  
+  <h3>
+    GET Request Data + Column State Data Configuration
+  </h3>
+  <p>
+    From the onset, I knew data management was going to be the crux of the challenge (between HTTP Requests and NgRx State Management). 
+    <br>
+    In the spirit of making re-usable components, container-to-presentational dataflow component model.
+  </p>
+
+  <h3>
+    Drag & Drop Columns (without table)
+  </h3>
+  <p>
+    A part of this challenge was explicitly specified to use & explore Angular's Drag & Drop CDK. And to not use tables
+    that have sorting or resizing built-in. I opted to build my "table" and columns all from using the Drag & Drop.
+  </p>
+
+  <h3>
+    Connect with ClickUp's API
+  </h3>
+  <p>
+    One of the challenge's requirements was to get data via Http request. But it didn't specify what API source to use. I
+    thought it would be a good learning experience to connect with ClickUp's API. 
+    <br>
+    Unfortunately, the requests wouldn't
+    authorize. Instead, I made a mock data API (for the Http requests) that mirrors properties of the
+  </p>
+  
+  <h3>
+    Column Width-Resize
+  </h3>
+  <p>
+    There are multiple solutions for resizing components, including libraries. What I didn't like about them is that they
+    all directly modified the DOM (which isn't considered "best practices"). Trying to do it "ng way", I learned more
+    about and used @HostListener for DOM events.
+  </p>
+
+  <h3>
+    Batch-Save Sorted Columns State
+  </h3>
+  <p>
+    Conceptually, I understand that I want to save the appeared sorted-state of the columns to the store. But I couldn't
+    figure out the configuration for updateMany() method for NgRx. After hours of research and trial-and-error, I pinned
+    this to-do to the end of my priorities.
+  </p>
+
+  </div>
+</div>
