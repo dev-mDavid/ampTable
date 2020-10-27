@@ -7,6 +7,8 @@
   <p>
   I didn't implement pagination into this project yet. This is how I would do it with ClickUp's API. For example, we'll use Get Tasks as the Http request. 
   <br>
-  To paginate my table: I would create a function that dynamically creates the Http request (using page as the parameter). I would bind this function to a button click. Most likely create several buttons that paginate to different page requests.
+  To paginate my table: I would create a function that dynamically creates the Http request (using page as the parameter). I would bind this function to a button click. Most likely create several buttons that paginate to different page requests. 
+  <br>
+  If we want to alter how many show on each render, I would create a select pagination-amount button. Dynamically take the amount-of-objects from the a single page-request and divide them by the pagination-amount. Then show the available pagination options. 
 </p>
 </div>
