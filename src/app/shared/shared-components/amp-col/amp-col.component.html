@@ -2,7 +2,7 @@
 <div 
   class="example-box"
   [ngStyle]="{
-    'width': widthPx, 
+  'width': widthPx, 
   'resize': 'horizontal',
   'overflow': 'auto'}"
   (resized)="resizedWidth($event)"
@@ -32,34 +32,36 @@
   <div cdkDragHandleDisabled>
     <h2>{{ col.name }}</h2>
     <hr>
-    <!-- <button ampDragResizer  (resizeDiff)="setWidth($event)"[ngStyle]="{'height': '20px', 'width': '200px'}"></button> -->
+    
   
-  <div>
-    <!-- <button 
-      (click)="changeWidth({id: col.id, width: 150})"
-      cdkDragHandleDisabled>
-
-      Change Width<br>
-       — 150
-    </button> -->
-    
-    <!-- <button 
-      (click)="changeWidth({id: col.id, width: 200})"
-      cdkDragHandleDisabled>
-
-      Change Width<br>
-      — 200
-    </button>     -->
-    
-    <div *ngFor="let task of tasks | async">
-      <div *ngIf="this.col.sc_name">        
-        <div class="rows">
+    <div *ngIf="search === true">    
+      <div *ngFor="let task of tasks | async">
+        <div *ngIf="this.col.sc_name">        
           <p>{{ task[this.col.sc_name] }}</p>
-        </div>
-      </div>      
+          <div class="rows">
+            <div *ngIf="task[this.col.sc_name] === '3000'">
+
+              <!-- <p>{{ task[this.col.sc_name] }}</p> -->
+              <!-- <p>{{ task[this.col] }}</p> -->
+            </div>
+          </div>
+        </div>      
+      </div>
     </div>
 
-  </div>
+    <div *ngIf="search === false">    
+      <div *ngFor="let task of tasks | async">
+        <div *ngIf="this.col.sc_name">        
+          <div class="rows">
+            <div *ngIf="task[this.col.sc_name] === '3000'">
+
+              <p>{{ task[this.col.sc_name] }}</p>
+              
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
 
   </div>
 </div>

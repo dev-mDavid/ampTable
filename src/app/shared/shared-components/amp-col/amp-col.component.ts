@@ -16,7 +16,7 @@ export class AmpColComponent implements OnInit {
 
 
 // DOM Events
-
+  search: boolean = true;
   
   // @HostListener('mousedown', ['$event'])
   // mouseDownListener(event){
