@@ -5,8 +5,8 @@
   'width': widthPx, 
   'resize': 'horizontal',
   'overflow': 'auto'}"
-  (resized)="resizedWidth($event)"
   >
+  <!-- (resized)="resizedWidth($event)"   -->
 
   <!-- Handle Indicator -->
   <!-- <mat-icon class="drag-handle" cdkDragHandle>
@@ -21,6 +21,7 @@
     </mat-icon>
   </div>
 
+
   <!-- Change-Width Handle Indicator -->
   <!-- <div ampDragResizer  (resizeDiff)="setWidth($event)" class="width-handle--change">
     <mat-icon cdkDragDisabled>
@@ -28,40 +29,26 @@
     </mat-icon>
   </div> -->
 
+  
+  <!-- Change-Width Handle Indicator -->
+  <div (click)="saveWidth($event)" class="width-handle--change">
+    <mat-icon cdkDragDisabled>
+      horizontal_distribute
+    </mat-icon>
+  </div>
+
   <!-- Column Name -->
   <div cdkDragHandleDisabled>
-    <h2>{{ col.name }}</h2>
+    <h4>{{ col.name }}</h4>
     <hr>
-    
-  
-    <div *ngIf="search === true">    
-      <div *ngFor="let task of tasks | async">
-        <div *ngIf="this.col.sc_name">        
-          <p>{{ task[this.col.sc_name] }}</p>
-          <div class="rows">
-            <div *ngIf="task[this.col.sc_name] === '3000'">
-
-              <!-- <p>{{ task[this.col.sc_name] }}</p> -->
-              <!-- <p>{{ task[this.col] }}</p> -->
-            </div>
-          </div>
-        </div>      
-      </div>
-    </div>
-
-    <div *ngIf="search === false">    
+          
       <div *ngFor="let task of tasks | async">
         <div *ngIf="this.col.sc_name">        
           <div class="rows">
-            <div *ngIf="task[this.col.sc_name] === '3000'">
-
-              <p>{{ task[this.col.sc_name] }}</p>
-              
-            </div>
+              <p>{{ task[this.col.sc_name] }}</p>              
           </div>
         </div>      
       </div>
-    </div>
 
   </div>
 </div>

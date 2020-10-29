@@ -1,5 +1,7 @@
-import { Component, OnInit,  Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit,  Input, Output, EventEmitter, HostListener, DoCheck } from '@angular/core';
 import { ResizedEvent } from 'angular-resize-event';
+import { Observable, fromEvent } from 'rxjs';
+import { observeOn  } from 'rxjs/operators';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class AmpColComponent implements OnInit {
 
 
 // DOM Events
-  search: boolean = true;
+  search: boolean = false;
   
   // @HostListener('mousedown', ['$event'])
   // mouseDownListener(event){
@@ -51,18 +53,12 @@ onResizeListener(){
   console.log('hello')
 }
 
-Rwidth: number;
-resizedWidth(event: ResizedEvent){
-  console.log(event.newWidth)
-  
+saveWidth(event){
+  const newWidth = event.target.parentElement.parentElement.clientWidth
+   this.changeWidth({id: this.col.id, width: newWidth})   
 }
 
-  setWidth(e){
-    console.log(this.col.width)
-    // let absoluteX = e;
-    // let colRelativeX = absoluteX - this.col.width;
-    // this.changeWidth({id: this.col.id, width: colRelativeX})   
-  }
+
 
 // Template Variables
   widthPx: string;
