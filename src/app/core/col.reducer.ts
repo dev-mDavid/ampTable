@@ -49,25 +49,25 @@ const defaultCol = {
       id: '0',
       name: 'Id',
       sc_name: 'id',
-      width: 200,
+      width: 75,
     },
     '1': {
       id:'1',
       name: 'Name',
       sc_name: 'name',
-      width: 200,
+      width: 250,
     },
     '2': {
       id:'2',
       name: 'Status',
       sc_name: 'status',
-      width: 200,
+      width: 150,
     },
     '3': {
       id:'3',
       name: 'Creator',
       sc_name: 'creator',
-      width: 200,
+      width: 150,
     },
   }
 }

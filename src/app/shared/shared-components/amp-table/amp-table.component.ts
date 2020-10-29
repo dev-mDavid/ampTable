@@ -42,7 +42,10 @@ export class AmpTableComponent  {
 ngOnDestroy(){
     this.colArray.unsubscribe()   
   }
-  
+  searchFilter(){
+    // console.log(window.find)
+
+  }
 
 // Http Requests
   readonly ROOT_URL = 'https://my-json-server.typicode.com/dev-mdavid/amptable';
@@ -61,7 +64,7 @@ ngOnDestroy(){
       id: new Date().getUTCMilliseconds().toString(),
       name: colName,
       sc_name: this.snakeCase(colName),
-      width: 200,
+      width: 150,
     }
 
     this.store.dispatch( new actions.Create(col))
