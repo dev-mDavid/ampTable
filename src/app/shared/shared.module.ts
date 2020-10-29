@@ -15,6 +15,9 @@ import { AmpTableComponent } from './shared-components/amp-table/amp-table.compo
 import { AmpColComponent } from "./shared-components/amp-col/amp-col.component";
 import { AmpTable2Component } from './shared-components/amp-table2/amp-table2.component';
 import { AmpCol2Component } from './shared-components/amp-col2/amp-col2.component';
+
+import { AngularResizedEventModule } from 'angular-resize-event';
+
 import { DragResizerDirective } from './shared-directives/drag-resizer.directive';
 
 const components = [
@@ -35,7 +38,8 @@ const modules = [
   MatIconModule,
   MatMenuModule,
   CdkTableModule,
-  DragDropModule
+  DragDropModule,
+  AngularResizedEventModule
 ]
 
 

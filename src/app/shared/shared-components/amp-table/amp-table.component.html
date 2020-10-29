@@ -5,6 +5,7 @@
     <!-- <h3>Add Column</h3> -->
   </button>
 </div>
+
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="createCol('Id')">Id</button>
   <button mat-menu-item (click)="createCol('Name')">Name</button>
@@ -43,8 +44,9 @@
   class="box"
   *ngFor = "let col of cols" >
   
-  
-  
+  <mat-icon class="drag-handle" cdkDragHandle>
+    drag_indicator
+  </mat-icon>
   <amp-col                       
       [col]="col"
       [tasks]="tasks"
@@ -52,9 +54,6 @@
       (deleteEvent)="receivesDelete($event)">    
     </amp-col>        
     
-    <mat-icon class="drag-handle" cdkDragHandle>
-      drag_indicator
-    </mat-icon>
 
     
   </div>

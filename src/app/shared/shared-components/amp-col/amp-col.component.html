@@ -1,7 +1,12 @@
 <!-- Box -->
 <div 
   class="example-box"
-  [ngStyle]="{'width': widthPx}">
+  [ngStyle]="{
+    'width': widthPx, 
+  'resize': 'horizontal',
+  'overflow': 'auto'}"
+  (resized)="resizedWidth($event)"
+  >
 
   <!-- Handle Indicator -->
   <!-- <mat-icon class="drag-handle" cdkDragHandle>
@@ -17,16 +22,17 @@
   </div>
 
   <!-- Change-Width Handle Indicator -->
-  <div class="width-handle--change">
+  <!-- <div ampDragResizer  (resizeDiff)="setWidth($event)" class="width-handle--change">
     <mat-icon cdkDragDisabled>
       horizontal_distribute
     </mat-icon>
-  </div>
+  </div> -->
 
   <!-- Column Name -->
   <div cdkDragHandleDisabled>
     <h2>{{ col.name }}</h2>
     <hr>
+    <!-- <button ampDragResizer  (resizeDiff)="setWidth($event)"[ngStyle]="{'height': '20px', 'width': '200px'}"></button> -->
   
   <div>
     <!-- <button 
