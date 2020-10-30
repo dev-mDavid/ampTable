@@ -6,10 +6,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CdkTableModule } from "@angular/cdk/table";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 
 import { AmpTableComponent } from './shared-components/amp-table/amp-table.component';
 import { AmpColComponent } from "./shared-components/amp-col/amp-col.component";
@@ -32,6 +35,8 @@ const modules = [
   MatToolbarModule,
   MatButtonModule,
 
+  FormsModule,
+  ReactiveFormsModule,
   MatInputModule,
   MatFormFieldModule,
 
@@ -39,6 +44,7 @@ const modules = [
   MatMenuModule,
   CdkTableModule,
   DragDropModule,
+  MatAutocompleteModule,
   AngularResizedEventModule
 ]
 
