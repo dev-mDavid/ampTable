@@ -2,7 +2,14 @@ import * as actions from "./col.action";
 import { EntityState, createEntityAdapter  } from "@ngrx/entity";
 import { createFeatureSelector } from "@ngrx/store";
 
-export interface Col{
+export interface Order {
+  ids: StringArray[]
+}
+
+export interface StringArray {
+  [index: number]: string;
+}
+export interface Col {
  id: string,
  name: string,
  sc_name: string,
