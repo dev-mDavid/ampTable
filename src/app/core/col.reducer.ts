@@ -14,29 +14,6 @@ export const colAdapter = createEntityAdapter<Col>();
 export interface State extends EntityState<Col> { }
 
 // Default Data / Initial State
-// const defaultCol = [
-//   {
-//       id: 1,
-//       name: "Ids",       
-//       width: 200,
-//     },
-//     {
-//       id: 2,
-//       name: "Name",
-//       width: 200,
-//     },
-//     {
-//       id: 3,
-//       name: "Status",
-//       width: 200,
-//     },
-//     {
-//       id: 4,
-//       name: "Creator",
-//       width: 200,
-//     },
-// ]
-
 const defaultCol = {
   ids: [
     '0', 
