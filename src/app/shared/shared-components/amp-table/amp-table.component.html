@@ -1,35 +1,39 @@
-<!-- Add Column Button -->
-<div class="button__add-col">
-  <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">
-    <mat-icon>addchart</mat-icon>
-    <!-- <h3>Add Column</h3> -->
-  </button>
+<div class="title">
+  <!-- Title -->
+  <h1>Tasks Table</h1>
 </div>
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="createCol('Id')">Id</button>
-  <button mat-menu-item (click)="createCol('Name')">Name</button>
-  <button mat-menu-item (click)="createCol('Status')">Status</button>
-  <button mat-menu-item (click)="createCol('Creator')">Creator</button>
-  <button mat-menu-item (click)="createCol('Date Created')">Date Created</button>
-  <button mat-menu-item (click)="createCol('Date Updated')">Date Updated</button>
-  <button mat-menu-item (click)="createCol('Date Closed')">Date Closed</button>
-  <button mat-menu-item (click)="createCol('Assignees')">Assignees</button>
-  <button mat-menu-item (click)="createCol('Checklists')">Checklists</button>
-  <button mat-menu-item (click)="createCol('Tags')">Tags</button>
-  <button mat-menu-item (click)="createCol('Priority')">Priority</button>
-  <button mat-menu-item (click)="createCol('Due Date')">Due Date</button>
-  <button mat-menu-item (click)="createCol('Start Date')">Start Date</button>
-  <button mat-menu-item (click)="createCol('Time Estimate')">Time Estimate</button>
-  <button mat-menu-item (click)="createCol('Time Spent')">Time Spent</button>
-  <button mat-menu-item (click)="createCol('List')">List</button>
-</mat-menu>
+  <!-- Search Input -->
+  <form class="example-form">
+  
+  <mat-form-field 
+    class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input 
+    type="text" 
+    placeholder="Search this page" 
+    aria-label="Number" 
+    matInput 
+    [formControl]="myControl"
+    [matAutocomplete]="auto">
+    
+    <mat-autocomplete 
+      autoActiveFirstOption 
+      #auto="matAutocomplete"
+      (optionSelected)="searchFilter($event.option)">
 
-<mat-form-field appearance="outline">
-  <mat-label>Search</mat-label>
-  <input matInput placeholder="Search">
-  <mat-icon matSuffix>search</mat-icon>
-</mat-form-field>
+      <mat-option 
+      *ngFor="let option of filteredOptions | async" 
+      [value]="option"      
+      >
+      
+        {{option}}
+        
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>  
+  <!-- <mat-icon>search</mat-icon> -->
+  </form>
 
 <!-- Drag & Drop Columns -->
 <div 
@@ -56,14 +60,30 @@
   </div>
 </div>
 
+<!-- Add Column Button -->
+<div class="button__add-col">
+  <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">
+
+    <mat-icon>addchart</mat-icon>
+  </button>
+</div>
+
+<mat-menu #menu="matMenu">
+  <div *ngFor="let colName of colNamesArray">
+    <button mat-menu-item (click)="createCol(colName)">{{ colName }}</button>
+  </div>
+</mat-menu>
+
 <!-- HTTP GET Request-->
 <button mat-raised-button color="primary"(click)="showGetRequest(true)">
   <mat-icon>source</mat-icon>
 </button>
 
 <div *ngIf="this.getRequestVisible">
+  <h3>Http GET Request</h3>
   <div *ngFor="let task of tasks | async | keyvalue">
     <!-- <pre>{{task | json}}</pre> -->
     <pre>{{ task.key | json}} : {{ task.value | json}}</pre>
   </div>
 </div>
+
