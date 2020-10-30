@@ -4,15 +4,7 @@
   [ngStyle]="{
   'width': widthPx, 
   'resize': 'horizontal',
-  'overflow': 'auto'}"
-  >
-  <!-- (resized)="resizedWidth($event)"   -->
-
-  <!-- Handle Indicator -->
-  <!-- <mat-icon class="drag-handle" cdkDragHandle>
-    drag_indicator
-  </mat-icon> -->
-
+  'overflow': 'auto'}">
 
   <!-- Delete Column Button -->
   <div class="delete-button">
@@ -20,22 +12,15 @@
       close
     </mat-icon>
   </div>
-
-
-  <!-- Change-Width Handle Indicator -->
-  <!-- <div ampDragResizer  (resizeDiff)="setWidth($event)" class="width-handle--change">
-    <mat-icon cdkDragDisabled>
-      horizontal_distribute
-    </mat-icon>
-  </div> -->
-
   
+
   <!-- Change-Width Handle Indicator -->
   <div (click)="saveWidth($event)" class="width-handle--change">
     <mat-icon cdkDragDisabled>
       horizontal_distribute
     </mat-icon>
   </div>
+
 
   <!-- Column Name -->
   <div cdkDragHandleDisabled>
