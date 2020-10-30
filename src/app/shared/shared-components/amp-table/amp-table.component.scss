@@ -1,11 +1,18 @@
 .button__add-col{
   float: right;
 }
+
 .mat-form-field-wrapper{
   padding-bottom: 0px;
 }
+
+.text--highlight {
+  padding: 2.5px;
+  background-color: #ff4081;
+  color: white;
+}
+
 .example-list {
-  
   width: 100%;
   max-width: 100%;
   // border: solid 1px #ccc;
@@ -19,11 +26,9 @@
   overflow: scroll;
 }
 
-
 .cdk-drag-placeholder {
   opacity: 0;
 }
-
 
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
@@ -33,10 +38,7 @@
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-
-
-.example-box {
-  
+.example-box {  
   padding: 20px 10px;
   border-right: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
@@ -83,8 +85,6 @@
 .resize-handle{
   cursor: ew-resize;
 }
-
-
 
 .example-box:last-child {
   border: none;
